@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ConfigActivity">
+
+    <!-- Toolbar con la flecha para volver atrás -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:title="@string/titulo_config" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenedor">
+
+            <TextView
+                style="@style/Texto.Normal"
+                android:text="@string/config_instruccion" />
+
+            <TextView
+                style="@style/Texto.Etiqueta"
+                android:text="@string/etiqueta_nombre" />
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:autofillHints="name"
+                style="@style/Campo"
+                android:hint="@string/hint_nombre"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLength="40" />
+
+            <TextView
+                style="@style/Texto.Etiqueta"
+                android:text="@string/etiqueta_direccion" />
+
+            <EditText
+                android:id="@+id/etDireccion"
+                android:autofillHints="postalAddress"
+                style="@style/Campo"
+                android:hint="@string/hint_direccion"
+                android:inputType="textPostalAddress" />
+
+            <TextView
+                style="@style/Texto.Etiqueta"
+                android:text="@string/etiqueta_telefono" />
+
+            <EditText
+                android:id="@+id/etTelefono"
+                android:autofillHints="phone"
+                style="@style/Campo"
+                android:hint="@string/hint_telefono"
+                android:inputType="phone"
+                android:maxLength="12" />
+
+            <TextView
+                style="@style/Texto.Etiqueta"
+                android:text="@string/etiqueta_correo" />
+
+            <EditText
+                android:id="@+id/etCorreo"
+                android:autofillHints="emailAddress"
+                style="@style/Campo"
+                android:hint="@string/hint_correo"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                style="@style/Texto.Etiqueta"
+                android:text="@string/etiqueta_url" />
+
+            <EditText
+                android:id="@+id/etUrl"
+                android:importantForAutofill="no"
+                style="@style/Campo"
+                android:hint="@string/hint_url"
+                android:inputType="textUri" />
+
+            <Button
+                android:id="@+id/btnGuardar"
+                style="@style/Boton"
+                android:layout_marginTop="@dimen/margen_seccion"
+                android:text="@string/btn_guardar" />
+
+            <Button
+                android:id="@+id/btnVolver"
+                style="@style/Boton.Volver"
+                android:layout_width="match_parent"
+                android:text="@string/btn_volver" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
