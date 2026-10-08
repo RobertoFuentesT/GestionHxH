@@ -1,10 +1,15 @@
 package com.devst.gestionhxh;
 
+import android.Manifest;
+import android.content.ActivityNotFoundException;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,7 +18,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -38,6 +50,28 @@ public class MainActivity extends AppCompatActivity {
     int ultimoEc;
     double ultimaTemp;
     boolean nivelAguaOk;
+
+    // Foto
+    Uri uriFoto;
+    final int PERMISO_CAMARA = 200;
+
+    // Recibe la respuesta de la app de cámara
+    ActivityResultLauncher<Intent> camaraLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult resultado) {
+                    if (resultado.getResultCode() == RESULT_OK) {
+                        ivFoto.setImageURI(uriFoto);
+                        ivFoto.setVisibility(View.VISIBLE);
+                        Toast.makeText(MainActivity.this, R.string.aviso_foto_guardada, Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Si el usuario cancela, borramos el espacio que reservamos en la galería
+                        getContentResolver().delete(uriFoto, null, null);
+                        Toast.makeText(MainActivity.this, R.string.aviso_foto_cancelada, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +167,38 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent config = new Intent(MainActivity.this, ConfigActivity.class);
                 startActivity(config);
+            }
+        });
+
+        // ---------- HERRAMIENTAS: intents implícitos ----------
+        findViewById(R.id.btnMapa).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abrirMapa();
+            }
+        });
+        findViewById(R.id.btnWeb).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abrirWeb();
+            }
+        });
+        findViewById(R.id.btnLlamar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                llamarProveedor();
+            }
+        });
+        findViewById(R.id.btnCorreo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                enviarCorreo();
+            }
+        });
+        findViewById(R.id.btnCamara).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tomarFoto();
             }
         });
     }
@@ -308,5 +374,151 @@ public class MainActivity extends AppCompatActivity {
         detalle.putExtra("lecturaEc", ultimoEc);
         detalle.putExtra("lecturaTemp", ultimaTemp);
         startActivity(detalle);
+    }
+
+    // =====================================================
+    // INTENT IMPLÍCITO 1: Google Maps
+    // =====================================================
+    private void abrirMapa() {
+        SharedPreferences prefs = getSharedPreferences("gestionhxh", MODE_PRIVATE);
+        String direccion = prefs.getString("direccion", "");
+
+        // Validación: necesitamos la dirección
+        if (direccion.isEmpty()) {
+            Toast.makeText(this, R.string.aviso_falta_direccion, Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Uri ubicacion = Uri.parse("geo:0,0?q=" + Uri.encode(direccion));
+        Intent mapa = new Intent(Intent.ACTION_VIEW, ubicacion);
+        try {
+            startActivity(mapa);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.aviso_sin_mapas, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // =====================================================
+    // INTENT IMPLÍCITO 2: página web
+    // =====================================================
+    private void abrirWeb() {
+        SharedPreferences prefs = getSharedPreferences("gestionhxh", MODE_PRIVATE);
+        String url = prefs.getString("url", getString(R.string.url_guia_defecto));
+
+        // Validación: la página debe empezar con https://
+        if (!url.startsWith("https://")) {
+            Toast.makeText(this, R.string.aviso_url_invalida, Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Intent web = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        try {
+            startActivity(web);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.aviso_sin_navegador, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // =====================================================
+    // INTENT IMPLÍCITO 3: marcador telefónico (no necesita permiso)
+    // =====================================================
+    private void llamarProveedor() {
+        SharedPreferences prefs = getSharedPreferences("gestionhxh", MODE_PRIVATE);
+        String telefono = prefs.getString("telefono", "");
+
+        if (telefono.isEmpty()) {
+            Toast.makeText(this, R.string.aviso_falta_telefono, Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Intent llamar = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + telefono));
+        try {
+            startActivity(llamar);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.aviso_sin_telefono, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // =====================================================
+    // INTENT IMPLÍCITO 4: correo con asunto y mensaje
+    // =====================================================
+    private void enviarCorreo() {
+        SharedPreferences prefs = getSharedPreferences("gestionhxh", MODE_PRIVATE);
+        String correo = prefs.getString("correo", "");
+
+        if (correo.isEmpty()) {
+            Toast.makeText(this, R.string.aviso_falta_correo, Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // Armamos el mensaje del correo
+        String mensaje = getString(R.string.correo_titulo);
+        if (hayLectura) {
+            mensaje += getString(R.string.correo_ph, String.valueOf(ultimoPh));
+            mensaje += getString(R.string.correo_ec, ultimoEc);
+            mensaje += getString(R.string.correo_temp, String.valueOf(ultimaTemp));
+            if (nivelAguaOk) {
+                mensaje += getString(R.string.correo_agua_ok);
+            } else {
+                mensaje += getString(R.string.correo_agua_mal);
+            }
+        } else {
+            mensaje += getString(R.string.correo_sin_lectura);
+        }
+        mensaje += getString(R.string.correo_despedida, prefs.getString("nombre", ""));
+
+        Intent email = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + correo));
+        email.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.correo_asunto));
+        email.putExtra(Intent.EXTRA_TEXT, mensaje);
+        try {
+            startActivity(email);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.aviso_sin_correo, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // =====================================================
+    // INTENT IMPLÍCITO 5: cámara (la foto queda en la galería)
+    // =====================================================
+    private void tomarFoto() {
+        // Primero revisamos si tenemos permiso de cámara
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED) {
+            abrirCamara();
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CAMERA}, PERMISO_CAMARA);
+        }
+    }
+
+    // Respuesta del usuario cuando le pedimos el permiso
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISO_CAMARA) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                abrirCamara();
+            } else {
+                Toast.makeText(this, R.string.aviso_sin_permiso_camara, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void abrirCamara() {
+        // Reservamos un espacio en la galería (carpeta Pictures/HuertoApp) para la foto
+        ContentValues datosFoto = new ContentValues();
+        datosFoto.put(MediaStore.Images.Media.DISPLAY_NAME, "gestionhxh_" + System.currentTimeMillis() + ".jpg");
+        datosFoto.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+        datosFoto.put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/GestionHxH");
+        uriFoto = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, datosFoto);
+
+        // Le decimos a la cámara dónde guardar la foto
+        Intent camara = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        camara.putExtra(MediaStore.EXTRA_OUTPUT, uriFoto);
+        try {
+            camaraLauncher.launch(camara);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.aviso_sin_camara, Toast.LENGTH_SHORT).show();
+        }
     }
 }
