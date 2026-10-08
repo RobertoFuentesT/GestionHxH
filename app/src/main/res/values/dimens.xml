@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Espacios -->
+    <dimen name="padding_pantalla">15dp</dimen>
+    <dimen name="margen_chico">5dp</dimen>
+    <dimen name="margen_boton">8dp</dimen>
+    <dimen name="margen_campo">10dp</dimen>
+    <dimen name="margen_seccion">20dp</dimen>
+    <dimen name="padding_texto">10dp</dimen>
+    <dimen name="espacio_lineas">5dp</dimen>
+
+    <!-- Tamaños de letra -->
+    <dimen name="texto_titulo_app">30sp</dimen>
+    <dimen name="texto_titulo_pantalla">26sp</dimen>
+    <dimen name="texto_seccion">20sp</dimen>
+    <dimen name="texto_grande">18sp</dimen>
+    <dimen name="texto_normal">16sp</dimen>
+    <dimen name="texto_emoji">70sp</dimen>
+
+    <!-- Alturas -->
+    <dimen name="alto_foto">250dp</dimen>
+    <dimen name="alto_spinner">50dp</dimen>
+</resources>

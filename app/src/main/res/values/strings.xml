@@ -1,0 +1,238 @@
+<resources>
+    <string name="app_name">Gestión HxH</string>
+
+    <!-- ===================== Generales ===================== -->
+    <string name="btn_volver">⬅️ Volver</string>
+    <string name="url_guia_defecto">https://es.wikipedia.org/wiki/Hidroponia</string>
+
+    <!-- ===================== Pantalla principal ===================== -->
+    <string name="titulo_app">🌱 Gestión HxH</string>
+    <string name="saludo_sin_nombre">👋 ¡Hola! Primero completa la configuración ⚙️</string>
+    <string name="saludo_con_nombre">👋 ¡Hola, %1$s!</string>
+    <string name="sin_siembra">Aún no registras una siembra</string>
+    <string name="ultima_siembra">🌱 Última siembra: %1$s (%2$s) el %3$s - Código %4$s</string>
+    <plurals name="cantidad_plantas">
+        <item quantity="one">%1$d planta</item>
+        <item quantity="other">%1$d plantas</item>
+    </plurals>
+
+    <string name="seccion_funciones">⚙️ Funciones</string>
+    <string name="btn_linterna_encender">🔦 Encender Linterna</string>
+    <string name="btn_linterna_apagar">🔦 Apagar Linterna</string>
+    <string name="btn_leer_sensores">🔄 Leer sensores</string>
+    <string name="sensores_sin_lectura">Sin lecturas todavía</string>
+    <string name="sensores_leyendo">⏳ Leyendo sensores…</string>
+
+    <string name="seccion_cultivos">🧭 Mis cultivos</string>
+    <string name="cultivos_instruccion">Toca un cultivo para ver toda su información</string>
+    <string name="btn_lechuga">🥬 Lechuga</string>
+    <string name="btn_albahaca">🌿 Albahaca</string>
+    <string name="btn_tomate">🍅 Tomate cherry</string>
+    <string name="btn_frutilla">🍓 Frutilla</string>
+    <string name="btn_espinaca">🥗 Espinaca</string>
+    <string name="btn_cilantro">🌱 Cilantro</string>
+
+    <string name="seccion_registro">📋 Registro y ajustes</string>
+    <string name="btn_registrar">📝 Registrar nueva siembra</string>
+    <string name="btn_config">⚙️ Configuración del huerto</string>
+
+    <string name="seccion_herramientas">🌐 Herramientas</string>
+    <string name="btn_mapa">🗺️ Ver ubicación del huerto en Maps</string>
+    <string name="btn_web">📖 Abrir guía de hidroponía</string>
+    <string name="btn_llamar">📞 Llamar al proveedor de nutrientes</string>
+    <string name="btn_correo">✉️ Enviar reporte por correo</string>
+    <string name="btn_camara">📷 Fotografiar el cultivo</string>
+    <string name="desc_foto">Foto del cultivo</string>
+
+    <!-- Lecturas de sensores -->
+    <string name="lectura_ph_ok">✅ pH: %1$s</string>
+    <string name="lectura_ph_mal">⚠️ pH: %1$s (ideal %2$s a %3$s)</string>
+    <string name="lectura_ec_ok">✅ EC: %1$d µS/cm</string>
+    <string name="lectura_ec_mal">⚠️ EC: %1$d µS/cm (ideal %2$d a %3$d)</string>
+    <string name="lectura_temp_ok">✅ Temperatura: %1$s °C</string>
+    <string name="lectura_temp_mal">⚠️ Temperatura: %1$s °C (ideal %2$d a %3$d)</string>
+    <string name="lectura_agua_ok">✅ Nivel de agua: OK</string>
+    <string name="lectura_agua_mal">⚠️ Nivel de agua: BAJO</string>
+    <string name="lectura_comparado">Comparado con: %1$s %2$s</string>
+
+    <!-- Avisos de la pantalla principal -->
+    <string name="aviso_sin_flash">❌ Este dispositivo no tiene flash</string>
+    <string name="aviso_error_linterna">❌ No se pudo usar la linterna en este dispositivo</string>
+    <string name="aviso_falta_direccion">📍 Primero ingresa la dirección en Configuración</string>
+    <string name="aviso_url_invalida">🌐 La página debe empezar con https://</string>
+    <string name="aviso_falta_telefono">📞 Primero ingresa el teléfono en Configuración</string>
+    <string name="aviso_falta_correo">✉️ Primero ingresa el correo en Configuración</string>
+    <string name="aviso_sin_mapas">❌ No hay una app de mapas</string>
+    <string name="aviso_sin_navegador">❌ No hay un navegador instalado</string>
+    <string name="aviso_sin_telefono">❌ No hay una app de teléfono</string>
+    <string name="aviso_sin_correo">❌ No hay una app de correo</string>
+    <string name="aviso_sin_camara">❌ No hay una app de cámara</string>
+    <string name="aviso_sin_permiso_camara">⚠️ Sin permiso no se puede usar la cámara</string>
+    <string name="aviso_foto_guardada">📷 Foto guardada en la galería</string>
+    <string name="aviso_foto_cancelada">Foto cancelada</string>
+
+    <!-- Correo -->
+    <string name="correo_asunto">🌱 Reporte del huerto</string>
+    <string name="correo_titulo">Reporte del huerto hidropónico\n\n</string>
+    <string name="correo_ph">pH: %1$s\n</string>
+    <string name="correo_ec">EC: %1$d µS/cm\n</string>
+    <string name="correo_temp">Temperatura: %1$s °C\n</string>
+    <string name="correo_agua_ok">Nivel de agua: OK\n</string>
+    <string name="correo_agua_mal">Nivel de agua: BAJO\n</string>
+    <string name="correo_sin_lectura">Todavía no se han leído los sensores.\n</string>
+    <string name="correo_despedida">\nSaludos, %1$s</string>
+
+    <!-- ===================== Detalle ===================== -->
+    <string name="detalle_condiciones">🌡️ Condiciones ideales</string>
+    <string name="detalle_cultivar">🌱 Cómo cultivarlo</string>
+    <string name="detalle_cuidados">🐛 Cuidados</string>
+    <string name="detalle_comparacion">📊 Comparación con los sensores</string>
+    <string name="detalle_texto_condiciones">🧪 pH: %1$s a %2$s\n⚡ EC (nutrientes): %3$d a %4$d µS/cm\n🌡️ Temperatura: %5$d a %6$d °C\n☀️ Luz: %7$s</string>
+    <string name="detalle_texto_cultivar">💧 Sistema recomendado: %1$s\n🌰 Germinación: %2$s\n📏 Distancia: %3$s\n⏱️ Cosecha: %4$s</string>
+    <string name="detalle_texto_cuidados">🧴 Nutrientes clave: %1$s\n🐛 Plagas y problemas: %2$s\n💡 Consejo: %3$s</string>
+    <string name="detalle_sin_datos">❌ No llegó la información del cultivo</string>
+    <string name="detalle_sin_lectura">ℹ️ Lee los sensores en la pantalla principal para comparar.</string>
+    <string name="comp_ph_bajo">⚠️ pH %1$s: está bajo, hay que subirlo</string>
+    <string name="comp_ph_alto">⚠️ pH %1$s: está alto, hay que bajarlo</string>
+    <string name="comp_ph_ok">✅ pH %1$s: está bien</string>
+    <string name="comp_ec_bajo">⚠️ EC %1$d: faltan nutrientes</string>
+    <string name="comp_ec_alto">⚠️ EC %1$d: muchos nutrientes, agrega agua</string>
+    <string name="comp_ec_ok">✅ EC %1$d: está bien</string>
+    <string name="comp_temp_bajo">⚠️ Temperatura %1$s °C: hace frío</string>
+    <string name="comp_temp_alto">⚠️ Temperatura %1$s °C: hace calor</string>
+    <string name="comp_temp_ok">✅ Temperatura %1$s °C: está bien</string>
+
+    <!-- ===================== Configuración ===================== -->
+    <string name="titulo_config">⚙️ Configuración</string>
+    <string name="config_instruccion">Estos datos se usan en los botones de Herramientas.</string>
+    <string name="etiqueta_nombre">👤 Tu nombre</string>
+    <string name="hint_nombre">Ej: Roberto</string>
+    <string name="etiqueta_direccion">📍 Dirección del huerto</string>
+    <string name="hint_direccion">Ej: Av. Siempre Viva 742, Santiago</string>
+    <string name="etiqueta_telefono">📞 Teléfono del proveedor</string>
+    <string name="hint_telefono">Ej: +56912345678</string>
+    <string name="etiqueta_correo">✉️ Correo para reportes</string>
+    <string name="hint_correo">Ej: nombre@correo.cl</string>
+    <string name="etiqueta_url">📖 Página de la guía</string>
+    <string name="hint_url">https://…</string>
+    <string name="btn_guardar">💾 Guardar</string>
+    <string name="error_nombre">Escribe tu nombre (mínimo 2 letras)</string>
+    <string name="error_direccion">Escribe la dirección del huerto</string>
+    <string name="error_telefono">El teléfono debe tener al menos 8 números</string>
+    <string name="error_correo">Correo no válido. Ej: nombre@correo.cl</string>
+    <string name="error_url">La página debe empezar con https://</string>
+    <string name="aviso_datos_guardados">💾 Datos guardados</string>
+
+    <!-- ===================== Formulario ===================== -->
+    <string name="titulo_form">📝 Registrar siembra</string>
+    <string name="etiqueta_cultivo">🌱 Cultivo</string>
+    <string name="spinner_selecciona">Selecciona un cultivo</string>
+    <string name="etiqueta_cantidad">🔢 Cantidad de plantas (1 a 200)</string>
+    <string name="hint_cantidad">Ej: 24</string>
+    <string name="etiqueta_fecha">📅 Fecha de siembra</string>
+    <string name="hint_fecha">Toca para elegir la fecha</string>
+    <string name="formato_fecha">%1$d/%2$d/%3$d</string>
+    <string name="etiqueta_ph">🧪 pH del agua (0 a 14)</string>
+    <string name="hint_ph">Ej: 6.0</string>
+    <string name="etiqueta_notas">🗒️ Notas (opcional)</string>
+    <string name="hint_notas">Ej: sistema NFT en la terraza</string>
+    <string name="btn_revisar">➡️ Revisar y confirmar</string>
+    <string name="error_cultivo">🌱 Selecciona un cultivo</string>
+    <string name="error_cantidad_vacia">Ingresa la cantidad de plantas</string>
+    <string name="error_cantidad_rango">Debe ser entre 1 y 200 plantas</string>
+    <string name="error_fecha">📅 Elige la fecha de siembra</string>
+    <string name="error_ph_vacio">Ingresa el pH del agua</string>
+    <string name="error_ph_numero">El pH debe ser un número. Ej: 6.0</string>
+    <string name="error_ph_rango">El pH debe estar entre 0 y 14</string>
+    <string name="aviso_siembra_guardada">🌱 Siembra guardada con código %1$s</string>
+    <string name="aviso_corregir">✏️ Puedes corregir los datos</string>
+
+    <!-- ===================== Confirmación ===================== -->
+    <string name="titulo_confirm">✅ Confirmar siembra</string>
+    <string name="btn_volver_editar">⬅️ Volver a editar</string>
+    <string name="confirm_instruccion">Revisa que los datos estén bien:</string>
+    <string name="confirm_resumen">%1$s Cultivo: %2$s\n🔢 Plantas: %3$d\n📅 Fecha: %4$s\n🧪 pH: %5$s\n🗒️ Notas: %6$s</string>
+    <string name="confirm_sin_notas">Sin notas</string>
+    <string name="confirm_advertencia_ph">⚠️ Ojo: el pH ideal para %1$s es de %2$s a %3$s. Ajusta el agua antes de sembrar.</string>
+    <string name="btn_confirmar">✅ Confirmar y guardar</string>
+    <string name="formato_codigo">HU-%1$d</string>
+
+    <!-- ===================== Cultivos ===================== -->
+    <!-- Lechuga -->
+    <string name="lechuga_nombre">Lechuga</string>
+    <string name="lechuga_emoji">🥬</string>
+    <string name="lechuga_descripcion">Es el cultivo más fácil para empezar en hidroponía porque crece rápido y no necesita mucho cuidado.</string>
+    <string name="lechuga_sistema">NFT o raíz flotante</string>
+    <string name="lechuga_luz">10 a 14 horas al día</string>
+    <string name="lechuga_germinacion">2 a 7 días</string>
+    <string name="lechuga_cosecha">45 a 60 días</string>
+    <string name="lechuga_distancia">20 cm entre plantas</string>
+    <string name="lechuga_nutrientes">Nitrógeno (hojas verdes) y calcio</string>
+    <string name="lechuga_plagas">Pulgones y trips. Con mucho calor se queman las puntas de las hojas.</string>
+    <string name="lechuga_consejo">Puedes cosechar solo las hojas de afuera y la planta sigue creciendo.</string>
+
+    <!-- Albahaca -->
+    <string name="albahaca_nombre">Albahaca</string>
+    <string name="albahaca_emoji">🌿</string>
+    <string name="albahaca_descripcion">Hierba aromática que crece muy bien en agua. Se usa mucho en la cocina.</string>
+    <string name="albahaca_sistema">NFT o goteo</string>
+    <string name="albahaca_luz">14 a 16 horas al día</string>
+    <string name="albahaca_germinacion">5 a 10 días</string>
+    <string name="albahaca_cosecha">60 días (primera cosecha a las 4 semanas)</string>
+    <string name="albahaca_distancia">25 cm entre plantas</string>
+    <string name="albahaca_nutrientes">Nitrógeno y magnesio</string>
+    <string name="albahaca_plagas">Mosca blanca, pulgones y hongos (mildiu).</string>
+    <string name="albahaca_consejo">Corta las flores apenas aparezcan para que la planta siga dando hojas.</string>
+
+    <!-- Tomate cherry -->
+    <string name="tomate_nombre">Tomate cherry</string>
+    <string name="tomate_emoji">🍅</string>
+    <string name="tomate_descripcion">Planta más grande que da frutos. Necesita más nutrientes y más luz que las hortalizas de hoja.</string>
+    <string name="tomate_sistema">Goteo con sustrato (fibra de coco o perlita)</string>
+    <string name="tomate_luz">14 a 18 horas al día</string>
+    <string name="tomate_germinacion">5 a 10 días</string>
+    <string name="tomate_cosecha">80 a 90 días</string>
+    <string name="tomate_distancia">40 cm entre plantas</string>
+    <string name="tomate_nutrientes">Potasio y calcio cuando empieza a dar frutos</string>
+    <string name="tomate_plagas">Mosca blanca y araña roja. La falta de calcio pudre la punta del tomate.</string>
+    <string name="tomate_consejo">Amarra la planta a un tutor y mueve las flores para ayudar a la polinización.</string>
+
+    <!-- Frutilla -->
+    <string name="frutilla_nombre">Frutilla</string>
+    <string name="frutilla_emoji">🍓</string>
+    <string name="frutilla_descripcion">Se cultiva muy bien en torres verticales y ocupa poco espacio.</string>
+    <string name="frutilla_sistema">Torre vertical o NFT</string>
+    <string name="frutilla_luz">12 a 16 horas al día</string>
+    <string name="frutilla_germinacion">Se planta desde estolones (hijos de otra planta)</string>
+    <string name="frutilla_cosecha">75 a 90 días</string>
+    <string name="frutilla_distancia">25 cm entre plantas</string>
+    <string name="frutilla_nutrientes">Potasio para que los frutos sean dulces</string>
+    <string name="frutilla_plagas">Araña roja y hongo gris (botritis).</string>
+    <string name="frutilla_consejo">No mojes los frutos para evitar que se pudran.</string>
+
+    <!-- Espinaca -->
+    <string name="espinaca_nombre">Espinaca</string>
+    <string name="espinaca_emoji">🥗</string>
+    <string name="espinaca_descripcion">Hortaliza de hoja que prefiere el clima fresco. Tiene mucho hierro.</string>
+    <string name="espinaca_sistema">Raíz flotante</string>
+    <string name="espinaca_luz">10 a 12 horas al día</string>
+    <string name="espinaca_germinacion">7 a 14 días</string>
+    <string name="espinaca_cosecha">40 a 50 días</string>
+    <string name="espinaca_distancia">15 cm entre plantas</string>
+    <string name="espinaca_nutrientes">Nitrógeno y hierro</string>
+    <string name="espinaca_plagas">Minador de hojas y pulgones.</string>
+    <string name="espinaca_consejo">Con mucho calor florece (se espiga) y las hojas se ponen amargas.</string>
+
+    <!-- Cilantro -->
+    <string name="cilantro_nombre">Cilantro</string>
+    <string name="cilantro_emoji">🌱</string>
+    <string name="cilantro_descripcion">Hierba de crecimiento rápido. Se usa en ensaladas, pebre y sopas.</string>
+    <string name="cilantro_sistema">NFT o raíz flotante</string>
+    <string name="cilantro_luz">12 a 14 horas al día</string>
+    <string name="cilantro_germinacion">7 a 10 días</string>
+    <string name="cilantro_cosecha">45 a 70 días</string>
+    <string name="cilantro_distancia">10 cm entre plantas</string>
+    <string name="cilantro_nutrientes">Nitrógeno</string>
+    <string name="cilantro_plagas">Pulgones.</string>
+    <string name="cilantro_consejo">Siembra un poco cada 2 o 3 semanas porque florece rápido.</string>
+</resources>
