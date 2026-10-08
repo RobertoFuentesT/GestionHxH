@@ -12,6 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GestionHxH">
         <activity
+            android:name=".DetalleActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ConfigActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".FormActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ConfirmActivity"
+            android:exported="false"
+            android:parentActivityName=".FormActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
