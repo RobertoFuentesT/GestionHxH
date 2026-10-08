@@ -8,7 +8,7 @@
 
     <LinearLayout style="@style/Contenedor">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnVolver"
             style="@style/Boton.Volver"
             android:text="@string/btn_volver" />
@@ -75,7 +75,7 @@
             android:inputType="textMultiLine|textCapSentences"
             android:maxLength="150" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnRevisar"
             style="@style/Boton"
             android:layout_marginTop="@dimen/margen_seccion"

@@ -8,7 +8,7 @@
 
     <LinearLayout style="@style/Contenedor">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnVolver"
             style="@style/Boton.Volver"
             android:text="@string/btn_volver" />

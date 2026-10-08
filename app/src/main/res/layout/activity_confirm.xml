@@ -8,7 +8,7 @@
 
     <LinearLayout style="@style/Contenedor">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnVolver"
             style="@style/Boton.Volver"
             android:text="@string/btn_volver_editar" />
@@ -43,7 +43,7 @@
             android:layout_marginTop="@dimen/margen_campo"
             android:visibility="gone" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnConfirmar"
             style="@style/Boton"
             android:layout_marginTop="@dimen/margen_seccion"

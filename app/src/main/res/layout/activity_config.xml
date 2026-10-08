@@ -84,13 +84,13 @@
                 android:hint="@string/hint_url"
                 android:inputType="textUri" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnGuardar"
                 style="@style/Boton"
                 android:layout_marginTop="@dimen/margen_seccion"
                 android:text="@string/btn_guardar" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnVolver"
                 style="@style/Boton.Volver"
                 android:layout_width="match_parent"

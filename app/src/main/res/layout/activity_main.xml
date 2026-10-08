@@ -32,13 +32,13 @@
             style="@style/Texto.Seccion"
             android:text="@string/seccion_funciones" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLinterna"
             style="@style/Boton"
             android:layout_marginTop="@dimen/margen_boton"
             android:text="@string/btn_linterna_encender" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLeerSensores"
             style="@style/Boton"
             android:text="@string/btn_leer_sensores" />
@@ -66,33 +66,33 @@
             style="@style/Texto.Normal"
             android:text="@string/cultivos_instruccion" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLechuga"
             style="@style/Boton"
             android:layout_marginTop="@dimen/margen_boton"
             android:text="@string/btn_lechuga" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnAlbahaca"
             style="@style/Boton"
             android:text="@string/btn_albahaca" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnTomate"
             style="@style/Boton"
             android:text="@string/btn_tomate" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnFrutilla"
             style="@style/Boton"
             android:text="@string/btn_frutilla" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnEspinaca"
             style="@style/Boton"
             android:text="@string/btn_espinaca" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCilantro"
             style="@style/Boton"
             android:text="@string/btn_cilantro" />
@@ -102,13 +102,13 @@
             style="@style/Texto.Seccion"
             android:text="@string/seccion_registro" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnRegistrar"
             style="@style/Boton"
             android:layout_marginTop="@dimen/margen_boton"
             android:text="@string/btn_registrar" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnConfig"
             style="@style/Boton"
             android:text="@string/btn_config" />
@@ -118,28 +118,28 @@
             style="@style/Texto.Seccion"
             android:text="@string/seccion_herramientas" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnMapa"
             style="@style/Boton"
             android:layout_marginTop="@dimen/margen_boton"
             android:text="@string/btn_mapa" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnWeb"
             style="@style/Boton"
             android:text="@string/btn_web" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLlamar"
             style="@style/Boton"
             android:text="@string/btn_llamar" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCorreo"
             style="@style/Boton"
             android:text="@string/btn_correo" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCamara"
             style="@style/Boton"
             android:text="@string/btn_camara" />
