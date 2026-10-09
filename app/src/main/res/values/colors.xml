@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="verde_200">#FF81C784</color>
+    <color name="verde_500">#FF2E7D32</color>
+    <color name="verde_700">#FF1B5E20</color>
+    <color name="agua_200">#FF80DEEA</color>
+    <color name="agua_500">#FF00838F</color>
+    <color name="agua_700">#FF006064</color>
+    <color name="alerta">#FFE65100</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

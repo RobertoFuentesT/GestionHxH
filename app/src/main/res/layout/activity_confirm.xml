@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfirmActivity">
+
+    <LinearLayout style="@style/Contenedor">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnVolver"
+            style="@style/Boton.Volver"
+            android:text="@string/btn_volver_editar" />
+
+        <TextView
+            style="@style/Texto.TituloPantalla"
+            android:text="@string/titulo_confirm" />
+
+        <TextView
+            style="@style/Texto.Normal"
+            android:layout_marginTop="@dimen/margen_chico"
+            android:text="@string/confirm_instruccion" />
+
+        <TextView
+            android:id="@+id/tvResumen"
+            style="@style/Texto.Normal"
+            android:layout_marginTop="@dimen/margen_campo"
+            android:textSize="@dimen/texto_grande" />
+
+        <TextView
+            android:id="@+id/tvAdvertencia"
+            style="@style/Texto.Normal"
+            android:layout_marginTop="@dimen/margen_campo"
+            android:textColor="@color/alerta"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/pbGuardando"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margen_campo"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConfirmar"
+            style="@style/Boton"
+            android:layout_marginTop="@dimen/margen_seccion"
+            android:text="@string/btn_confirmar" />
+
+    </LinearLayout>
+</ScrollView>

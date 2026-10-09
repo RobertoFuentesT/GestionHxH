@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Pantalla con scroll: espacio alrededor del contenido -->
+    <style name="Contenedor">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/padding_pantalla</item>
+    </style>
+
+    <!-- Botón como en AppPrueba: AppCompatButton con fondo de color y letra blanca -->
+    <style name="Boton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margen_boton</item>
+        <item name="android:padding">@dimen/padding_texto</item>
+        <item name="android:background">@color/verde_700</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/texto_normal</item>
+    </style>
+
+    <!-- Botón "Volver": igual al anterior pero más chico y de otro color -->
+    <style name="Boton.Volver">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@color/agua_700</item>
+    </style>
+
+    <!-- Estilo base de los textos (los de abajo heredan de este) -->
+    <style name="Texto" />
+
+    <!-- Títulos -->
+    <style name="Texto.TituloApp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/texto_titulo_app</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Texto.TituloPantalla">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margen_campo</item>
+        <item name="android:textSize">@dimen/texto_titulo_pantalla</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Texto.Seccion">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margen_seccion</item>
+        <item name="android:textSize">@dimen/texto_seccion</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Etiqueta en negrita sobre cada campo del formulario -->
+    <style name="Texto.Etiqueta">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margen_campo</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Texto normal con espacio entre líneas -->
+    <style name="Texto.Normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/texto_normal</item>
+        <item name="android:lineSpacingExtra">@dimen/espacio_lineas</item>
+    </style>
+
+    <!-- Campo de texto -->
+    <style name="Campo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

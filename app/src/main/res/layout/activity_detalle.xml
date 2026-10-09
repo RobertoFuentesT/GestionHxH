@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetalleActivity">
+
+    <LinearLayout style="@style/Contenedor">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnVolver"
+            style="@style/Boton.Volver"
+            android:text="@string/btn_volver" />
+
+        <TextView
+            android:id="@+id/tvEmoji"
+            style="@style/Texto.TituloApp"
+            android:textSize="@dimen/texto_emoji"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tvNombre"
+            style="@style/Texto.TituloApp" />
+
+        <TextView
+            android:id="@+id/tvDescripcion"
+            style="@style/Texto.Normal"
+            android:layout_marginTop="@dimen/margen_campo"
+            android:textAlignment="center" />
+
+        <!-- Condiciones ideales -->
+        <TextView
+            style="@style/Texto.Seccion"
+            android:text="@string/detalle_condiciones" />
+
+        <TextView
+            android:id="@+id/tvCondiciones"
+            style="@style/Texto.Normal" />
+
+        <!-- Cómo cultivarlo -->
+        <TextView
+            style="@style/Texto.Seccion"
+            android:text="@string/detalle_cultivar" />
+
+        <TextView
+            android:id="@+id/tvCultivar"
+            style="@style/Texto.Normal" />
+
+        <!-- Cuidados -->
+        <TextView
+            style="@style/Texto.Seccion"
+            android:text="@string/detalle_cuidados" />
+
+        <TextView
+            android:id="@+id/tvCuidados"
+            style="@style/Texto.Normal" />
+
+        <!-- Comparación con los sensores -->
+        <TextView
+            style="@style/Texto.Seccion"
+            android:text="@string/detalle_comparacion" />
+
+        <TextView
+            android:id="@+id/tvComparacion"
+            style="@style/Texto.Normal"
+            android:layout_marginBottom="@dimen/margen_seccion" />
+
+    </LinearLayout>
+</ScrollView>

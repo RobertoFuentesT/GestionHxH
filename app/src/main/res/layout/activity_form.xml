@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormActivity">
+
+    <LinearLayout style="@style/Contenedor">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnVolver"
+            style="@style/Boton.Volver"
+            android:text="@string/btn_volver" />
+
+        <TextView
+            style="@style/Texto.TituloPantalla"
+            android:text="@string/titulo_form" />
+
+        <TextView
+            style="@style/Texto.Etiqueta"
+            android:text="@string/etiqueta_cultivo" />
+
+        <Spinner
+            android:id="@+id/spCultivo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/alto_spinner" />
+
+        <TextView
+            style="@style/Texto.Etiqueta"
+            android:text="@string/etiqueta_cantidad" />
+
+        <EditText
+            android:id="@+id/etCantidad"
+            android:importantForAutofill="no"
+            style="@style/Campo"
+            android:hint="@string/hint_cantidad"
+            android:inputType="number"
+            android:maxLength="3" />
+
+        <TextView
+            style="@style/Texto.Etiqueta"
+            android:text="@string/etiqueta_fecha" />
+
+        <EditText
+            android:id="@+id/etFecha"
+            android:importantForAutofill="no"
+            style="@style/Campo"
+            android:hint="@string/hint_fecha"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none" />
+
+        <TextView
+            style="@style/Texto.Etiqueta"
+            android:text="@string/etiqueta_ph" />
+
+        <EditText
+            android:id="@+id/etPh"
+            android:importantForAutofill="no"
+            style="@style/Campo"
+            android:hint="@string/hint_ph"
+            android:inputType="numberDecimal"
+            android:maxLength="4" />
+
+        <TextView
+            style="@style/Texto.Etiqueta"
+            android:text="@string/etiqueta_notas" />
+
+        <EditText
+            android:id="@+id/etNotas"
+            android:importantForAutofill="no"
+            style="@style/Campo"
+            android:hint="@string/hint_notas"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLength="150" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRevisar"
+            style="@style/Boton"
+            android:layout_marginTop="@dimen/margen_seccion"
+            android:text="@string/btn_revisar" />
+
+    </LinearLayout>
+</ScrollView>

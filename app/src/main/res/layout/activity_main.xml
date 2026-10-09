@@ -1,10 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout style="@style/Contenedor">
+
+        <TextView
+            style="@style/Texto.TituloApp"
+            android:layout_marginTop="@dimen/margen_campo"
+            android:text="@string/titulo_app" />
+
+        <TextView
+            android:id="@+id/tvSaludo"
+            style="@style/Texto.Normal"
+            android:layout_marginTop="@dimen/margen_chico"
+            android:textAlignment="center"
+            android:textSize="@dimen/texto_grande"
+            android:text="@string/saludo_sin_nombre" />
+
+        <TextView
+            android:id="@+id/tvUltimoRegistro"
+            style="@style/Texto.Normal"
+            android:textAlignment="center"
+            android:text="@string/sin_siembra" />
+
+        <!-- ========== FUNCIONES ========== -->
+        <TextView
+            style="@style/Texto.Seccion"
+            android:text="@string/seccion_funciones" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLinterna"
+            style="@style/Boton"
+            android:layout_marginTop="@dimen/margen_boton"
+            android:text="@string/btn_linterna_encender" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLeerSensores"
+            style="@style/Boton"
+            android:text="@string/btn_leer_sensores" />
+
+        <ProgressBar
+            android:id="@+id/pbSensores"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvSensores"
+            style="@style/Texto.Normal"
+            android:padding="@dimen/padding_texto"
+            android:text="@string/sensores_sin_lectura" />
+
+        <!-- ========== CULTIVOS (intent explícito con extras) ========== -->
+        <TextView
+            style="@style/Texto.Seccion"
+            android:text="@string/seccion_cultivos" />
+
+        <TextView
+            style="@style/Texto.Normal"
+            android:text="@string/cultivos_instruccion" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLechuga"
+            style="@style/Boton"
+            android:layout_marginTop="@dimen/margen_boton"
+            android:text="@string/btn_lechuga" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAlbahaca"
+            style="@style/Boton"
+            android:text="@string/btn_albahaca" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTomate"
+            style="@style/Boton"
+            android:text="@string/btn_tomate" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnFrutilla"
+            style="@style/Boton"
+            android:text="@string/btn_frutilla" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnEspinaca"
+            style="@style/Boton"
+            android:text="@string/btn_espinaca" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCilantro"
+            style="@style/Boton"
+            android:text="@string/btn_cilantro" />
+
+        <!-- ========== OTRAS PANTALLAS (intents explícitos) ========== -->
+        <TextView
+            style="@style/Texto.Seccion"
+            android:text="@string/seccion_registro" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRegistrar"
+            style="@style/Boton"
+            android:layout_marginTop="@dimen/margen_boton"
+            android:text="@string/btn_registrar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConfig"
+            style="@style/Boton"
+            android:text="@string/btn_config" />
+
+        <!-- ========== HERRAMIENTAS (intents implícitos) ========== -->
+        <TextView
+            style="@style/Texto.Seccion"
+            android:text="@string/seccion_herramientas" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMapa"
+            style="@style/Boton"
+            android:layout_marginTop="@dimen/margen_boton"
+            android:text="@string/btn_mapa" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnWeb"
+            style="@style/Boton"
+            android:text="@string/btn_web" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLlamar"
+            style="@style/Boton"
+            android:text="@string/btn_llamar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCorreo"
+            style="@style/Boton"
+            android:text="@string/btn_correo" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCamara"
+            style="@style/Boton"
+            android:text="@string/btn_camara" />
+
+        <ImageView
+            android:id="@+id/ivFoto"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/alto_foto"
+            android:layout_marginTop="@dimen/margen_campo"
+            android:layout_marginBottom="@dimen/margen_seccion"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:contentDescription="@string/desc_foto" />
+
+    </LinearLayout>
+</ScrollView>
