@@ -134,6 +134,9 @@ if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
 ```
 
 ## ▶️ Cómo probarla
+📲 **¿Solo quieres instalarla?** Descarga la APK desde [Releases](https://github.com/RobertoFuentesT/GestionHxH/releases/latest) (archivo `app-HxH.apk` en *Assets*) y ábrela en un celular con Android 12 o más.
+
+**Si quieres compilarla tú:**
 
 1. Clonar el repo y abrirlo en **Android Studio**.
 2. Esperar que termine de sincronizar Gradle y darle ▶ **Run** (emulador o celular con Android 12 o más).
