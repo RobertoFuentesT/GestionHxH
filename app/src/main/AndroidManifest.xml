@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Cámara: se pide en tiempo de ejecución antes de tomar la foto -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
     <!-- Visibilidad de paquetes (Android 11+) para los intents implícitos -->
     <queries>
         <intent>
